@@ -1,4 +1,4 @@
-# Type Race
+# Type Practice
 
 Practice your typing speed while reading words of wisdom.
 
