@@ -79,7 +79,7 @@ const App = (): ReactElement => {
         if (gameState.isVictory === true) {
             updateDocumentTitle('Finished!');
         } else {
-            updateDocumentTitle('Type Race');
+            updateDocumentTitle('Type Practice');
         }
     }, [gameState.isVictory]);
 
@@ -112,7 +112,7 @@ const App = (): ReactElement => {
             {isWaitingOnUserToChooseQuote && <div className="backdrop" />}
             <Timer timerIsOn={gameState.timerIsOn} delta={gameState.targetText} />
             <header className="header">
-                <h1 className="appTitle">Type Race</h1>
+                <h1 className="appTitle">Type Practice</h1>
                 <p className="gameStatus">
                     {gameState.isVictory &&
                         gameState.totalTime &&
