@@ -8,6 +8,7 @@
     text-align: center;
     color: var(--quinary-color);
     background-color: #e9807480;
+    border-radius: var(--border-radius);
     transition:
         transform 250ms,
         background-color 400ms,

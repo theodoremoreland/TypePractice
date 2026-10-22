@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: header;
-    src: url('./fonts/SourceCodePro/SourceCodePro-Bold.ttf');
+    src: url('./assets/fonts/SourceCodePro/SourceCodePro-Bold.ttf');
 }
 
 @font-face {
     font-family: body;
-    src: url('./fonts/SourceCodePro/SourceCodePro-Regular.ttf');
+    src: url('./assets/fonts/SourceCodePro/SourceCodePro-Regular.ttf');
 }
 
 @font-face {
     font-family: accent;
-    src: url('./fonts/SourceCodePro/SourceCodePro-Light.ttf');
+    src: url('./assets/fonts/SourceCodePro/SourceCodePro-Light.ttf');
 }
 
 /* ------------------- VARIABLES ------------------- */
@@ -36,6 +36,8 @@
 
     --content-width: 90%;
     --content-max-width: 2160px;
+
+    --border-radius: 4px;
 
     --primary-color: #e85a4f;
     --secondary-color: #e98074;
@@ -74,10 +76,15 @@ body,
 }
 
 .header {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: var(--content-width);
+    max-width: var(--content-max-width);
     text-align: center;
 }
 
@@ -85,7 +92,7 @@ body,
     width: min-content;
     font: var(--header-large);
     color: var(--quinary-color);
-    margin: 5px 0px;
+    margin: 10px 0px;
     padding: 0;
     text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.096);
     transform: skewY(-5deg);
