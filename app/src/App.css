@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: header;
-    src: url('./fonts/SourceCodePro/SourceCodePro-Bold.ttf');
+    src: url('./assets/fonts/SourceCodePro/SourceCodePro-Bold.ttf');
 }
 
 @font-face {
     font-family: body;
-    src: url('./fonts/SourceCodePro/SourceCodePro-Regular.ttf');
+    src: url('./assets/fonts/SourceCodePro/SourceCodePro-Regular.ttf');
 }
 
 @font-face {
     font-family: accent;
-    src: url('./fonts/SourceCodePro/SourceCodePro-Light.ttf');
+    src: url('./assets/fonts/SourceCodePro/SourceCodePro-Light.ttf');
 }
 
 /* ------------------- VARIABLES ------------------- */
@@ -37,14 +37,23 @@
     --content-width: 90%;
     --content-max-width: 2160px;
 
+    --border-radius: 4px;
+
     --primary-color: #e85a4f;
-    --secondary-color: #e98074;
+    --secondary-color: #ee6050;
     --tertiary-color: #8e8d8a;
     --quaternary-color: #d8c3a5;
     --quinary-color: #eae7dc;
 }
 
 /* ------------------- GLOBAL ------------------- */
+
+html {
+    ::selection {
+        background-color: var(--primary-color); /* Changes the highlight background */
+        color: black; /* Changes the text color inside the highlight */
+    }
+}
 
 html,
 body,
@@ -58,7 +67,7 @@ body,
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--secondary-color);
+    background: radial-gradient(circle, rgb(0, 0, 0) 79%, rgba(240, 56, 64, 1) 228%);
 }
 
 /* ------------------- APP ------------------- */
@@ -74,18 +83,24 @@ body,
 }
 
 .header {
+    z-index: 3;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: var(--content-width);
+    max-width: var(--content-max-width);
     text-align: center;
 }
 
 .appTitle {
     width: min-content;
     font: var(--header-large);
-    color: var(--quinary-color);
-    margin: 5px 0px;
+    color: var(--secondary-color);
+    margin: 10px 0px;
     padding: 0;
     text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.096);
     transform: skewY(-5deg);
@@ -94,7 +109,7 @@ body,
 
 .gameStatus {
     font: var(--header-small);
-    color: #000000;
+    color: var(--quinary-color);
     text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.116);
 }
 
@@ -137,6 +152,7 @@ body,
     align-items: center;
     margin: 0;
     padding: 10px;
+    color: #eae7dca6;
     font: var(--header-small);
 }
 

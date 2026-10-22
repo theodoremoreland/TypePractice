@@ -8,12 +8,10 @@
     width: 100vw;
     opacity: 0.5;
     font: var(--header-xxl);
-    color: black;
+    color: var(--quinary-color);
     text-align: center;
     pointer-events: none;
 }
-
-
 
 @media screen and (min-width: 2160px) {
     .timer {

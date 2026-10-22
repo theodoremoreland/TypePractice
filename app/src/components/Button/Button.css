@@ -3,10 +3,10 @@
     padding: 18px;
     font: var(--header-xs);
     color: var(--quinary-color);
-    background-color: var(--secondary-color);
-    border-radius: 18px;
-    border-style: solid;
-    border-color: var(--quinary-color);
+    background-color: color-mix(in srgb, var(--secondary-color), transparent 30%);
+    border-radius: calc(var(--border-radius) + 10px);
+    border-style: groove;
+    border-color: black;
 }
 
 .button:hover {

@@ -7,7 +7,8 @@
     font: var(--body-medium);
     text-align: center;
     color: var(--quinary-color);
-    background-color: #e9807480;
+    background: radial-gradient(circle, rgb(238, 96, 80) -108%, rgb(0, 0, 0) 125%);
+    border-radius: var(--border-radius);
     transition:
         transform 250ms,
         background-color 400ms,
@@ -21,3 +22,5 @@
     background-color: var(--secondary-color);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
+
+/* #f06c5d */
