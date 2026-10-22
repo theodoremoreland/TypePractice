@@ -145,7 +145,7 @@ const App = (): ReactElement => {
                         <h3>Choose a quote or</h3>
                         <Button
                             key={'Refresh'}
-                            text={'Refresh'}
+                            text="REFRESH"
                             callback={async () => {
                                 await refetch();
                                 gameDispatch({ type: GameActionType.Clear });

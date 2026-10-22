@@ -11,7 +11,8 @@
     padding: 1rem;
     box-sizing: border-box;
     font: var(--body-large);
-    border-style: none;
+    border-style: groove;
+    border-color: color-mix(in srgb, var(--primary-color), transparent 30%);
     border-radius: var(--border-radius);
     animation: fadeIn 1.5s forwards linear;
     resize: none;
@@ -31,7 +32,7 @@
 
 .inputBackdrop {
     color: #8e8d8a;
-    background-color: var(--quaternary-color);
+    background-color: #020202;
     pointer-events: none;
 }
 
