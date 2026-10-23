@@ -37,7 +37,7 @@
     --content-width: 90%;
     --content-max-width: 2160px;
 
-    --border-radius: 4px;
+    --border-radius: 10px;
 
     --primary-color: #e85a4f;
     --secondary-color: #ee6050;
@@ -67,7 +67,7 @@ body,
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: radial-gradient(circle, rgb(0, 0, 0) 79%, rgba(240, 56, 64, 1) 228%);
+    background: radial-gradient(circle, rgb(0, 0, 0) 97%, rgba(240, 56, 64, 1) 326%);
 }
 
 /* ------------------- APP ------------------- */
