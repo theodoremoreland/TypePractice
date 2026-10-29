@@ -1,12 +1,7 @@
 // React
 import React, { useState, useEffect, useRef, ReactElement, useReducer, useCallback } from 'react';
 
-// Third party
-import { useQuery } from '@tanstack/react-query';
-
 // Custom
-import { fetchRandomQuotes } from './api_calls/fetchRandomQuotes';
-import extractErrorMessage from './utils/extractErrorMessage';
 import selectRandomInspirationalQuotes from './modules/selectRandomInspirationalQuotes';
 
 // Custom components
@@ -34,16 +29,6 @@ const App = (): ReactElement => {
     const [availableQuotes, setAvailableQuotes] = useState<string[]>([]);
     const [isWaitingOnUserToChooseQuote, setIsWaitingOnUserToChooseQuote] = useState<boolean>(false);
 
-    const { data, isError, refetch } = useQuery({
-        queryKey: ['quotes'],
-        queryFn: fetchRandomQuotes,
-        onError: (err: unknown) => console.error(extractErrorMessage(err)),
-        cacheTime: 300_000,
-        staleTime: 240_000,
-        retry: false,
-        enabled: true,
-    });
-
     const chooseQuote = useCallback((selectedQuote: string) => {
         gameDispatch({ type: GameActionType.Start, targetText: selectedQuote.replace(/[’]/g, "'") });
     }, []);
@@ -59,19 +44,11 @@ const App = (): ReactElement => {
     );
 
     useEffect(() => {
-        if (data) {
+        if (availableQuotes.length === 0) {
             gameDispatch({ type: GameActionType.Clear });
-            setAvailableQuotes(data);
-        }
-    }, [data]);
-
-    useEffect(() => {
-        if (isError) {
             setAvailableQuotes(selectRandomInspirationalQuotes());
         }
-    }, [isError]);
 
-    useEffect(() => {
         setIsWaitingOnUserToChooseQuote(true);
     }, [availableQuotes]);
 
@@ -143,14 +120,7 @@ const App = (): ReactElement => {
                 <div className={`${isWaitingOnUserToChooseQuote ? 'waiting-on-user-to-choose-quote' : ''} cardGroup`}>
                     <div className="groupHeader">
                         <h3>Choose a quote or</h3>
-                        <Button
-                            key={'Refresh'}
-                            text="REFRESH"
-                            callback={async () => {
-                                await refetch();
-                                gameDispatch({ type: GameActionType.Clear });
-                            }}
-                        />
+                        <Button key={'Refresh'} text="REFRESH" callback={() => setAvailableQuotes([])} />
                     </div>
                     {availableQuotes.map((quote: string) => (
                         <Card key={quote} text={quote} callback={chooseQuote} />
