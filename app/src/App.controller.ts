@@ -1,10 +1,3 @@
-// HTTP requests
-import { fetchRandomQuotes } from './api_calls/fetchRandomQuotes';
-
-// Utils & Scripts
-import extractErrorMessage from './utils/extractErrorMessage';
-import selectRandomInspirationalQuotes from './modules/selectRandomInspirationalQuotes';
-
 export enum GameActionType {
     Start = 'start',
     Continue = 'continue',
@@ -108,18 +101,4 @@ export const gameReducer = (gameState: GameState, action: GameAction): GameState
 
 export const updateDocumentTitle = (newTitle: string): void => {
     document.title = newTitle;
-};
-
-export const getRandomQuotes = async (): Promise<string[]> => {
-    let randomQuotes: string[];
-
-    try {
-        randomQuotes = await fetchRandomQuotes();
-    } catch (error) {
-        console.error(extractErrorMessage(error));
-
-        randomQuotes = selectRandomInspirationalQuotes();
-    }
-
-    return randomQuotes;
 };
