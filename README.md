@@ -38,36 +38,24 @@ The application attempts to retrieve each quote dynamically via HTTP request(s).
 
 ### Desktop
 
-#### Initial view (Desktop)
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/1.png" width="600">
 
-<img src="presentation/1.PNG" width="600">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/2.png" width="600">
 
-#### After starting game (Desktop)
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/3.png" width="600">
 
-<img src="presentation/2.PNG" width="600">
-
-#### Progress in game (Desktop)
-
-<img src="presentation/3.PNG" width="600">
-
-#### After game completed (Desktop)
-
-<img src="presentation/4.PNG" width="600">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/4.png" width="600">
 
 ### Mobile
 
-#### Initial screen (Mobile)
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/5.png" width="250">
 
-<img src="presentation/5.PNG" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/6.png" width="250">
 
-#### Initial screen 2 (Mobile)
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/7.png" width="250">
 
-<img src="presentation/6.PNG" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/8.png" width="250">
 
-#### Progress in game (Mobile)
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/9.png" width="250">
 
-<img src="presentation/7.PNG" width="300">
-
-#### Game completed (Mobile)
-
-<img src="presentation/8.PNG" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/10.png" width="250">
