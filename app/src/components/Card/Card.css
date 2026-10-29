@@ -7,7 +7,7 @@
     font: var(--body-medium);
     text-align: center;
     color: var(--quinary-color);
-    background: radial-gradient(circle, rgb(246, 46, 23) -604%, rgb(0, 0, 0) 70%);
+    background: radial-gradient(circle, rgb(246, 46, 23) -604%, rgb(9, 9, 9) 70%);
     border: none;
     border-radius: var(--border-radius);
     transition: color 250ms;
