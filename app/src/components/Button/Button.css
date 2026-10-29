@@ -6,7 +6,6 @@
     background: radial-gradient(circle, var(--primary-color) -9%, rgb(0, 0, 0) 230%);
     border-radius: calc(var(--border-radius) + 10px);
     border-style: none;
-    outline: transparent;
 }
 
 .button:hover {

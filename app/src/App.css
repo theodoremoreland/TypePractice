@@ -57,7 +57,15 @@ html {
 
 html,
 body,
-#root,
+#root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* ------------------- APP ------------------- */
+
 .app {
     margin: 0;
     padding: 0;
@@ -69,8 +77,6 @@ body,
     align-items: center;
     background: radial-gradient(circle, rgb(0, 0, 0) 97%, rgba(240, 56, 64, 1) 326%);
 }
-
-/* ------------------- APP ------------------- */
 
 .backdrop {
     z-index: 3;
@@ -199,7 +205,9 @@ body,
 
 @media screen and (min-width: 769px) {
     .appTitle {
-        font: 2.2rem header;
+        font:
+            2.2rem header,
+            system-ui;
     }
 
     .panel {
