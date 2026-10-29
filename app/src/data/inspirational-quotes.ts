@@ -16,7 +16,7 @@ export default [
         author: 'Johann Wolfgang von Goethe',
     },
     {
-        text: 'Fate is in your hands and no one elses',
+        text: "Fate is in your hands and no one else's",
         author: 'Byron Pulsifer',
     },
     {
@@ -168,7 +168,7 @@ export default [
         author: 'Haddon Robinson',
     },
     {
-        text: 'One faces the future with ones past.',
+        text: "One faces the future with one's past.",
         author: 'Pearl Buck',
     },
     {
@@ -672,7 +672,7 @@ export default [
         author: 'Robert Heller',
     },
     {
-        text: 'Loss is nothing else but change,and change is Natures delight.',
+        text: "Loss is nothing else but change, and change is nature's delight.",
         author: 'Marcus Aurelius',
     },
     {
@@ -1152,7 +1152,7 @@ export default [
         author: 'William Yeats',
     },
     {
-        text: 'Practice yourself, for heavens sake in little things, and then proceed to greater.',
+        text: "Practice yourself, for heaven's sake in little things, and then proceed to greater.",
         author: 'Epictetus',
     },
     {
@@ -1160,7 +1160,7 @@ export default [
         author: 'Seneca',
     },
     {
-        text: 'Our greatest glory is not in never failing but rising everytime we fall.',
+        text: 'Our greatest glory is not in never failing but rising every time we fall.',
         author: null,
     },
     {
@@ -1624,7 +1624,7 @@ export default [
         author: 'Ralph Emerson',
     },
     {
-        text: 'A life spent making mistakes is not only more honourable but more useful than a life spent in doing nothing.',
+        text: 'A life spent making mistakes is not only more honorable but more useful than a life spent in doing nothing.',
         author: 'Bernard Shaw',
     },
     {
@@ -1816,7 +1816,7 @@ export default [
         author: 'Byron Pulsifer',
     },
     {
-        text: 'Deep listening is miraculous for both listener and speaker.When someone receives us with open-hearted, non-judging, intensely interested listening, our spirits expand.',
+        text: 'Deep listening is miraculous for both listener and speaker. When someone receives us with open-hearted, non-judging, intensely interested listening, our spirits expand.',
         author: 'Sue Patton Thoele',
     },
     {
@@ -1988,7 +1988,7 @@ export default [
         author: 'Lloyd Jones',
     },
     {
-        text: 'Snowflakes are one of natures most fragile things, but just look what they can do when they stick together.',
+        text: "Snowflakes are one of nature's most fragile things, but just look what they can do when they stick together.",
         author: 'Vista Kelly',
     },
     {
@@ -2032,7 +2032,7 @@ export default [
         author: 'Oliver Holmes',
     },
     {
-        text: 'With the realization of ones own potential and self-confidence in ones ability, one can build a better world.',
+        text: "With the realization of one's own potential and self-confidence in one's ability, one can build a better world.",
         author: 'Dalai Lama',
     },
     {
@@ -2368,7 +2368,7 @@ export default [
         author: 'Helen Keller',
     },
     {
-        text: 'To live a pure unselfish life, one must count nothing as ones own in the midst of abundance.',
+        text: "To live a pure unselfish life, one must count nothing as one's own in the midst of abundance.",
         author: 'Buddha',
     },
     {
@@ -2576,7 +2576,7 @@ export default [
         author: 'Alan Watts',
     },
     {
-        text: 'The aim of life is self-development. To realize ones nature perfectly that is what each of us is here for.',
+        text: "The aim of life is self-development. To realize one's nature perfectly that is what each of us is here for.",
         author: 'Oscar Wilde',
     },
     {
@@ -2712,7 +2712,7 @@ export default [
         author: 'Napoleon Bonaparte',
     },
     {
-        text: 'With realization of ones own potential and self-confidence in ones ability, one can build a better world.',
+        text: "With realization of one's own potential and self-confidence in one's ability, one can build a better world.",
         author: 'Dalai Lama',
     },
     {
@@ -3452,11 +3452,11 @@ export default [
         author: 'Alphonse Karr',
     },
     {
-        text: 'To choose what is difficult all ones days, as if it were easy, that is faith.',
+        text: "To choose what is difficult all one's days, as if it were easy, that is faith.",
         author: 'W. H. Auden',
     },
     {
-        text: "Ability is what you're capable of doing. Motivation determines what you do.Attitude determines how well you do it.",
+        text: "Ability is what you're capable of doing. Motivation determines what you do. Attitude determines how well you do it.",
         author: 'Lou Holtz',
     },
     {
@@ -3580,7 +3580,7 @@ export default [
         author: 'Orison Marden',
     },
     {
-        text: 'Everything can be taken from a man but ... the last of the human freedoms to choose ones attitude in any given set of circumstances, to choose ones own way.',
+        text: "Everything can be taken from a man but ... the last of the human freedoms to choose one's attitude in any given set of circumstances, to choose one's own way.",
         author: 'Victor Frankl',
     },
     {
@@ -3624,7 +3624,7 @@ export default [
         author: 'Amiel',
     },
     {
-        text: 'Love at first sight is easy to understand; its when two people have been looking at each other for a lifetime that it becomes a miracle.',
+        text: "Love at first sight is easy to understand; it's when two people have been looking at each other for a lifetime that it becomes a miracle.",
         author: 'Amy Bloom',
     },
     {
@@ -3672,7 +3672,7 @@ export default [
         author: 'Marie Curie',
     },
     {
-        text: 'Parents can only give good advice or put them on the right paths, but the final forming of a persons character lies in their own hands.',
+        text: "Parents can only give good advice or put them on the right paths, but the final forming of a person's character lies in their own hands.",
         author: 'Anne Frank',
     },
     {
@@ -3692,7 +3692,7 @@ export default [
         author: 'Albert Einstein',
     },
     {
-        text: "My advice to you is not to inquire why or whither, but just enjoy your ice cream while its on your plate that's my philosophy.",
+        text: "My advice to you is not to inquire why or whither, but just enjoy your ice cream while it's on your plate that's my philosophy.",
         author: 'Thornton Wilder',
     },
     {
@@ -3840,7 +3840,7 @@ export default [
         author: 'Lao Tzu',
     },
     {
-        text: 'To dare is to lose ones footing momentarily. To not dare is to lose oneself.',
+        text: "To dare is to lose one's footing momentarily. To not dare is to lose oneself.",
         author: 'Soren Kierkegaard',
     },
     {
@@ -4244,7 +4244,7 @@ export default [
         author: 'Mother Teresa',
     },
     {
-        text: 'In three words I can sum up everything Ive learned about life: it goes on.',
+        text: "In three words I can sum up everything I've learned about life: it goes on.",
         author: 'Robert Frost',
     },
     {
@@ -4536,7 +4536,7 @@ export default [
         author: 'Frederick Wilcox',
     },
     {
-        text: 'Liberty, taking the word in its concrete sense, consists in the ability to choose.',
+        text: "Liberty, taking the word in it's concrete sense, consists in the ability to choose.",
         author: 'Simone Weil',
     },
     {
@@ -4684,7 +4684,7 @@ export default [
         author: 'Wayne Dyer',
     },
     {
-        text: "My advice to you is not to inquire why or whither, but just enjoy your ice cream while its on your plate, that's my philosophy.",
+        text: "My advice to you is not to inquire why or whither, but just enjoy your ice cream while it's on your plate, that's my philosophy.",
         author: 'Thornton Wilder',
     },
     {
@@ -4772,7 +4772,7 @@ export default [
         author: 'Ralph Emerson',
     },
     {
-        text: 'To change ones life, start immediately, do it flamboyantly, no exceptions.',
+        text: "To change one's life, start immediately, do it flamboyantly, no exceptions.",
         author: 'William James',
     },
     {
@@ -5112,7 +5112,7 @@ export default [
         author: 'Henry Thoreau',
     },
     {
-        text: "Thats the risk you take if you change: that people you've been involved with won't like the new you. But other people who do will come along.",
+        text: "That's the risk you take if you change: that people you've been involved with won't like the new you. But other people who do will come along.",
         author: 'Lisa Alther',
     },
     {
@@ -5276,7 +5276,7 @@ export default [
         author: 'Leonardo da Vinci',
     },
     {
-        text: 'All the world is a stage, And all the men and women merely players.They have their exits and entrances; Each man in his time plays many parts.',
+        text: 'All the world is a stage, And all the men and women merely players. They have their exits and entrances; Each man in his time plays many parts.',
         author: 'William Shakespeare',
     },
     {
@@ -5484,7 +5484,7 @@ export default [
         author: 'Moncure Conway',
     },
     {
-        text: 'Weve got to have a dream if we are going to make a dream come true.',
+        text: "We've got to have a dream if we are going to make a dream come true.",
         author: 'Walt Disney',
     },
     {
@@ -5512,7 +5512,7 @@ export default [
         author: 'Albert Einstein',
     },
     {
-        text: 'Change will not come if we wait for some other person or some other time. We are the ones weve been waiting for. We are the change that we seek.',
+        text: "Change will not come if we wait for some other person or some other time. We are the ones we've been waiting for. We are the change that we seek.",
         author: 'Barack Obama',
     },
     {
@@ -5556,7 +5556,7 @@ export default [
         author: 'Albert Einstein',
     },
     {
-        text: "I love my past. I love my present. I'm not ashamed of what Ive had, and I'm not sad because I have it no longer.",
+        text: "I love my past. I love my present. I'm not ashamed of what I've had, and I'm not sad because I have it no longer.",
         author: 'Colette',
     },
     {
@@ -5708,7 +5708,7 @@ export default [
         author: 'Buddha',
     },
     {
-        text: 'Risk more than others think is safe. Care more than others think is wise. Dream more than others think is practical.Expect more than others think is possible.',
+        text: 'Risk more than others think is safe. Care more than others think is wise. Dream more than others think is practical. Expect more than others think is possible.',
         author: 'Cadet Maxim',
     },
     {
@@ -5956,7 +5956,7 @@ export default [
         author: 'Thomas Carlyle',
     },
     {
-        text: "If you do what you've always done, you'll get what youve always gotten.",
+        text: "If you do what you've always done, you'll get what you've always gotten.",
         author: 'Tony Robbins',
     },
     {
@@ -6004,7 +6004,7 @@ export default [
         author: 'Daisaku Ikeda',
     },
     {
-        text: 'To give ones self earnestly to the duties due to men, and, while respecting spiritual beings, to keep aloof from them, may be called wisdom.',
+        text: "To give one's self earnestly to the duties due to men, and, while respecting spiritual beings, to keep aloof from them, may be called wisdom.",
         author: 'Confucius',
     },
     {
@@ -6132,7 +6132,7 @@ export default [
         author: 'Ernest Hemingway',
     },
     {
-        text: 'One needs something to believe in, something for which one can have whole-hearted enthusiasm. One needs to feel that ones life has meaning, that one is needed in this world.',
+        text: "One needs something to believe in, something for which one can have whole-hearted enthusiasm. One needs to feel that one's life has meaning, that one is needed in this world.",
         author: 'Hannah Senesh',
     },
     {
@@ -6332,7 +6332,7 @@ export default [
         author: 'Wayne Dyer',
     },
     {
-        text: 'Numberless are the worlds wonders, but none more wonderful than man.',
+        text: "Numberless are the world's wonders, but none more wonderful than man.",
         author: 'Sophocles',
     },
     {
@@ -6548,7 +6548,7 @@ export default [
         author: 'Rodin',
     },
     {
-        text: 'If one way be better than another, that you may be sure is natures way.',
+        text: "If one way be better than another, that you may be sure is nature's way.",
         author: 'Aristotle',
     },
     {
