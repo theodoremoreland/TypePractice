@@ -11,8 +11,14 @@ interface Props {
 
 export default function CardWrapper({ text, callback }: Props): React.ReactElement {
     return (
-        <div className="card" key={text} onClick={() => callback(text)}>
+        <button
+            aria-label="Select following text"
+            type="button"
+            className="card"
+            key={text}
+            onClick={() => callback(text)}
+        >
             <p className="cardText">{text}</p>
-        </div>
+        </button>
     );
 }
