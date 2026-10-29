@@ -10,11 +10,11 @@
     background: radial-gradient(circle, rgb(246, 46, 23) -604%, rgb(0, 0, 0) 70%);
     border: none;
     border-radius: var(--border-radius);
-    transition: transform 250ms;
+    transition: color 250ms;
     animation: fadeIn 1.5s forwards linear;
 }
 
 .card:hover {
     cursor: pointer;
-    transform: translateY(-5%);
+    color: color-mix(in srgb, var(--secondary-color), rgb(255, 58, 75) 35%);
 }
