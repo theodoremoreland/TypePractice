@@ -49,15 +49,19 @@
 /* ------------------- GLOBAL ------------------- */
 
 html {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgb(0, 0, 0) 97%, rgba(240, 56, 64, 1) 326%);
+
     ::selection {
         background-color: var(--primary-color); /* Changes the highlight background */
         color: black; /* Changes the text color inside the highlight */
     }
 }
 
-html,
 body,
 #root {
+    position: relative;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -67,6 +71,7 @@ body,
 /* ------------------- APP ------------------- */
 
 .app {
+    position: relative;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -75,7 +80,6 @@ body,
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: radial-gradient(circle, rgb(0, 0, 0) 97%, rgba(240, 56, 64, 1) 326%);
 }
 
 .backdrop {
@@ -92,7 +96,7 @@ body,
     z-index: 3;
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -100,6 +104,12 @@ body,
     width: var(--content-width);
     max-width: var(--content-max-width);
     text-align: center;
+    padding-bottom: 10px;
+
+    @media screen and (min-width: 968px) {
+        flex-direction: row;
+        padding-bottom: 0;
+    }
 }
 
 .appTitle {
