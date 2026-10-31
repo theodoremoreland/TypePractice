@@ -99,8 +99,18 @@ const App = (): ReactElement => {
         <main className="app" ref={appContainerRef}>
             {isWaitingOnUserToChooseQuote && <div className="backdrop" />}
             <Timer timerIsOn={gameState.timerIsOn} delta={gameState.targetText} />
+            <p className="gameStatus"></p>
             <header className="header">
-                <h1 className="appTitle">Type Practice</h1>
+                <h1 className="appTitle">
+                    <a
+                        title="View source code"
+                        href="https://github.com/theodoremoreland/TypePractice"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Type Practice
+                    </a>
+                </h1>
                 <StatsSummary stats={stats} />
             </header>
             <div className="panel">
