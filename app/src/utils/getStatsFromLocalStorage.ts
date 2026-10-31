@@ -1,4 +1,5 @@
 export enum StatsKey {
+    LastProcessed = 'lastProcessed',
     Today = 'today',
     Previous = 'previous',
     Attempts = 'attempts',
@@ -27,6 +28,8 @@ export type Today = {
 };
 
 export interface Stats {
+    /** Last quote to be processed. For reference to avoid redundant processing. */
+    [StatsKey.LastProcessed]: Date | null;
     /** Record of all quotes completed today. */
     [StatsKey.Today]: Today;
     /** Most recent wpm completed. */
@@ -64,6 +67,7 @@ const getStatsFromLocalStorage = (): Stats => {
         localStorage.clear();
 
         const newStats: Stats = {
+            lastProcessed: null,
             today: {
                 date: new Date(),
                 quoteRecords: [],
