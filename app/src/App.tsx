@@ -99,7 +99,13 @@ const App = (): ReactElement => {
         <main className="app" ref={appContainerRef}>
             {isWaitingOnUserToChooseQuote && <div className="backdrop" />}
             <Timer timerIsOn={gameState.timerIsOn} delta={gameState.targetText} />
-            <p className="gameStatus"></p>
+            {gameState.isVictory && gameState.totalTime && (
+                <p className="gameStatus">
+                    {`${new Intl.NumberFormat().format(gameState.totalTime / 1000)}s @ ${Math.floor(
+                        gameState.targetText.split(' ').length / (gameState.totalTime / 1000 / 60),
+                    )}wpm`}
+                </p>
+            )}
             <header className="header">
                 <h1 className="appTitle">
                     <a

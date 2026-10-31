@@ -130,9 +130,25 @@ body,
 }
 
 .gameStatus {
-    font: var(--header-small);
-    color: var(--quinary-color);
-    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.116);
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-family: body, system-ui;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    background-color: rgba(0, 0, 0, 0.442);
+    padding-top: 15vh;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.664);
+    animation: gameOver 3s forwards linear;
 }
 
 .panel {
@@ -214,6 +230,26 @@ body,
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes gameOver {
+    0% {
+        opacity: 0;
+        padding-top: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        padding-top: 15vh;
     }
 }
 
