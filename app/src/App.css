@@ -145,6 +145,7 @@ body,
     font-family: body, system-ui;
     font-size: 3rem;
     color: var(--secondary-color);
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.442);
     padding-top: 15vh;
     text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.664);
@@ -236,7 +237,7 @@ body,
 @keyframes gameOver {
     0% {
         opacity: 0;
-        padding-top: 0;
+        padding-top: 15dvh;
     }
 
     25% {
@@ -249,7 +250,7 @@ body,
 
     100% {
         opacity: 0;
-        padding-top: 15vh;
+        padding-top: 50dvh;
     }
 }
 
