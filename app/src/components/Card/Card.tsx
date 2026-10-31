@@ -1,24 +1,27 @@
 // React
 import React from 'react';
 
+// Custom
+import { Quote } from '../../data/inspirational-quotes';
+
 // Custom styles
 import './Card.css';
 
 interface Props {
-    text: string;
-    callback: (text: string) => void;
+    quote: Quote;
+    callback: (quote: Quote) => void;
 }
 
-export default function CardWrapper({ text, callback }: Props): React.ReactElement {
+export default function CardWrapper({ quote, callback }: Props): React.ReactElement {
     return (
         <button
             aria-label="Select following text"
             type="button"
             className="card"
-            key={text}
-            onClick={() => callback(text)}
+            key={quote.id}
+            onClick={() => callback(quote)}
         >
-            <p className="cardText">{text}</p>
+            <p className="cardText">{quote.text}</p>
         </button>
     );
 }

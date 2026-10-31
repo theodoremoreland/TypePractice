@@ -1,3 +1,7 @@
+import { QuoteRecord, Stats } from './utils/getStatsFromLocalStorage';
+import calculateWordsPerMinute from './utils/calculateWordsPerMinute';
+import generateQuoteRecord from './utils/generateQuoteRecord';
+
 export enum GameActionType {
     Start = 'start',
     Continue = 'continue',
@@ -9,6 +13,7 @@ export enum GameActionType {
 export interface GameStartAction {
     type: GameActionType.Start;
     targetText: string;
+    quoteId: number;
 }
 
 export interface GameContinueAction {
@@ -18,6 +23,7 @@ export interface GameContinueAction {
 
 export interface GameFinishAction {
     type: GameActionType.Finish;
+    stats: Stats;
 }
 
 export interface GameRestartAction {
@@ -31,6 +37,7 @@ export interface GameClearAction {
 export type GameAction = GameStartAction | GameContinueAction | GameFinishAction | GameRestartAction | GameClearAction;
 
 export interface GameState {
+    quoteId: number | null;
     typedText: string;
     targetText: string;
     isVictory: boolean;
@@ -44,6 +51,7 @@ export interface Genres {
 }
 
 export const initialGameState: GameState = {
+    quoteId: null,
     typedText: '',
     targetText: '',
     isVictory: false,
@@ -57,6 +65,7 @@ export const gameReducer = (gameState: GameState, action: GameAction): GameState
 
     switch (action.type) {
         case GameActionType.Start: {
+            newGameState.quoteId = action.quoteId;
             newGameState.typedText = initialGameState.typedText;
             newGameState.targetText = action.targetText;
             newGameState.isVictory = initialGameState.isVictory;
@@ -73,9 +82,59 @@ export const gameReducer = (gameState: GameState, action: GameAction): GameState
             break;
         }
         case GameActionType.Finish: {
+            const wasPreviousInvocationAVictory: boolean = newGameState.isVictory;
+            const quoteId: number = newGameState.quoteId as number;
+            const today: Date = new Date();
+
             newGameState.isVictory = true;
             newGameState.timerIsOn = false;
-            newGameState.totalTime = new Date().getTime() - (gameState.startTime as number);
+            newGameState.totalTime = today.getTime() - (gameState.startTime as number);
+
+            const stats: Stats = action.stats;
+            const wpm: number = calculateWordsPerMinute(
+                { type: 'string', value: newGameState.targetText },
+                newGameState.totalTime,
+            );
+            const newQuoteEntry: QuoteRecord = generateQuoteRecord(today, newGameState.targetText, wpm);
+
+            // History
+            if (stats?.history?.[quoteId]) {
+                const oldQuoteEntry = stats.history[quoteId];
+
+                if (wpm > oldQuoteEntry.wpm) {
+                    oldQuoteEntry.wpm = wpm;
+                    oldQuoteEntry.date = today;
+                }
+
+                stats.history[quoteId] = oldQuoteEntry;
+            } else if (stats.history) {
+                stats.history = {
+                    ...stats.history,
+                    [quoteId]: newQuoteEntry,
+                };
+            } else {
+                stats.history = {
+                    [quoteId]: newQuoteEntry,
+                };
+            }
+
+            // Attempts
+            if (!wasPreviousInvocationAVictory) {
+                stats.attempts = stats.attempts ? stats.attempts + 1 : 1;
+            }
+
+            // Previous
+            if (new Date(stats.today.date).toLocaleDateString() === today.toLocaleDateString()) {
+                stats.today.quoteRecords.push(newQuoteEntry);
+            } else {
+                stats.today.date = today;
+                stats.today.quoteRecords.push(newQuoteEntry);
+            }
+            stats.totals.ms += newGameState.totalTime;
+            stats.totals.words += newGameState.targetText.split(' ').length;
+            stats.previous = wpm;
+
+            localStorage.setItem('stats', JSON.stringify(stats));
 
             break;
         }

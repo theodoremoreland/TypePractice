@@ -2,7 +2,10 @@
 import React, { useState, useEffect, useRef, ReactElement, useReducer, useCallback } from 'react';
 
 // Custom
+import { Quote } from './data/inspirational-quotes';
 import selectRandomInspirationalQuotes from './modules/selectRandomInspirationalQuotes';
+import getStatsFromLocalStorage, { Stats } from './utils/getStatsFromLocalStorage';
+import StatsSummary from './components/StatsSummary/StatsSummary';
 
 // Custom components
 import Card from './components/Card/Card';
@@ -17,6 +20,8 @@ import { GameActionType, gameReducer, initialGameState, updateDocumentTitle } fr
 import './reset.css';
 import './App.css';
 
+const initialStats = getStatsFromLocalStorage();
+
 const App = (): ReactElement => {
     // Refs
     const inputRef = useRef<HTMLTextAreaElement | null>(null);
@@ -24,13 +29,18 @@ const App = (): ReactElement => {
 
     // Game state
     const [gameState, gameDispatch] = useReducer(gameReducer, initialGameState);
+    const [stats, setStats] = useState<Stats>(initialStats);
 
     // App state
-    const [availableQuotes, setAvailableQuotes] = useState<string[]>([]);
+    const [availableQuotes, setAvailableQuotes] = useState<Quote[]>([]);
     const [isWaitingOnUserToChooseQuote, setIsWaitingOnUserToChooseQuote] = useState<boolean>(false);
 
-    const chooseQuote = useCallback((selectedQuote: string) => {
-        gameDispatch({ type: GameActionType.Start, targetText: selectedQuote.replace(/[’]/g, "'") });
+    const chooseQuote = useCallback((selectedQuote: Quote) => {
+        gameDispatch({
+            type: GameActionType.Start,
+            quoteId: selectedQuote.id,
+            targetText: selectedQuote.text.replace(/[’]/g, "'"),
+        });
     }, []);
 
     /** Checks for delete after completing quote, will restart game if so. */
@@ -54,6 +64,7 @@ const App = (): ReactElement => {
 
     useEffect(() => {
         if (gameState.isVictory === true) {
+            setStats(getStatsFromLocalStorage());
             updateDocumentTitle('Finished!');
         } else {
             updateDocumentTitle('Type Practice');
@@ -67,12 +78,12 @@ const App = (): ReactElement => {
             gameState.typedText.length < gameState.targetText.length && gameState.isVictory === true;
 
         if (hasUserCompletedText) {
-            gameDispatch({ type: GameActionType.Finish });
+            gameDispatch({ type: GameActionType.Finish, stats: stats });
         } else if (hasUserDeletedCharAfterCompletingText) {
             // This is a fallback for restarting game upon deleting a character after completing a quote if the user device does not have the Backspace key.
             gameDispatch({ type: GameActionType.Restart });
         }
-    }, [gameState.typedText, gameState.targetText, gameState.isVictory]);
+    }, [gameState.typedText, gameState.targetText, gameState.isVictory, stats]);
 
     useEffect(() => {
         if (gameState.targetText) {
@@ -90,13 +101,7 @@ const App = (): ReactElement => {
             <Timer timerIsOn={gameState.timerIsOn} delta={gameState.targetText} />
             <header className="header">
                 <h1 className="appTitle">Type Practice</h1>
-                <p className="gameStatus">
-                    {gameState.isVictory &&
-                        gameState.totalTime &&
-                        `Finished in ${new Intl.NumberFormat().format(gameState.totalTime)}ms @ ${Math.floor(
-                            gameState.targetText.split(' ').length / (gameState.totalTime / 1000 / 60),
-                        )}WPM`}
-                </p>
+                <StatsSummary stats={stats} />
             </header>
             <div className="panel">
                 <div className={`${isWaitingOnUserToChooseQuote ? 'waiting-on-user-to-choose-quote' : ''} description`}>
@@ -122,8 +127,8 @@ const App = (): ReactElement => {
                         <h3>Choose a quote or</h3>
                         <Button key={'Refresh'} text="REFRESH" callback={() => setAvailableQuotes([])} />
                     </div>
-                    {availableQuotes.map((quote: string) => (
-                        <Card key={quote} text={quote} callback={chooseQuote} />
+                    {availableQuotes.map((quote: Quote) => (
+                        <Card key={quote.id} quote={quote} callback={chooseQuote} />
                     ))}
                 </div>
             )}

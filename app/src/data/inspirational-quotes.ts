@@ -1,4 +1,10 @@
-export default [
+export interface Quote {
+    id: number;
+    text: string;
+    author: string | null;
+}
+
+const quotes: Quote[] = [
     {
         id: 0,
         text: 'Genius is one percent inspiration and ninety-nine percent perspiration.',
@@ -21,7 +27,7 @@ export default [
     },
     {
         id: 4,
-        text: "Fate is in your hands and no one else's",
+        text: "Fate is in your hands and no one else's.",
         author: 'Byron Pulsifer',
     },
     {
@@ -186,7 +192,7 @@ export default [
     },
     {
         id: 37,
-        text: 'Learning is a treasure that will follow its owner everywhere',
+        text: 'Learning is a treasure that will follow its owner everywhere.',
         author: 'Chinese proverb',
     },
     {
@@ -1226,7 +1232,7 @@ export default [
     },
     {
         id: 245,
-        text: 'An ant on the move does more than a dozing ox',
+        text: 'An ant on the move does more than a dozing ox.',
         author: 'Lao Tzu',
     },
     {
@@ -1836,7 +1842,7 @@ export default [
     },
     {
         id: 367,
-        text: 'Most people are about as happy as they make up their minds to be',
+        text: 'Most people are about as happy as they make up their minds to be.',
         author: 'Abraham Lincoln',
     },
     {
@@ -2191,7 +2197,7 @@ export default [
     },
     {
         id: 438,
-        text: 'Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back by becoming more',
+        text: 'Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back by becoming more.',
         author: 'Anthony Robbins',
     },
     {
@@ -2321,7 +2327,7 @@ export default [
     },
     {
         id: 464,
-        text: 'Let me tell you the secret that has led me to my goal: my strength lies solely in my tenacity',
+        text: 'Let me tell you the secret that has led me to my goal: my strength lies solely in my tenacity.',
         author: 'Louis Pasteur',
     },
     {
@@ -5841,7 +5847,7 @@ export default [
     },
     {
         id: 1168,
-        text: 'Fine words and an insinuating appearance are seldom associated with true virtue',
+        text: 'Fine words and an insinuating appearance are seldom associated with true virtue.',
         author: 'Confucius',
     },
     {
@@ -5981,7 +5987,7 @@ export default [
     },
     {
         id: 1196,
-        text: 'The steeper the mountain the harder the climb the better the view from the finishing line',
+        text: 'The steeper the mountain the harder the climb the better the view from the finishing line.',
         author: null,
     },
     {
@@ -8215,3 +8221,5 @@ export default [
         author: 'Tom Jackson',
     },
 ];
+
+export default quotes;

@@ -51,7 +51,7 @@
 html {
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle, rgb(9, 9, 9) 90%, rgba(240, 56, 64, 1) 193%);
+    background: radial-gradient(circle, rgb(9, 9, 9) 72%, rgba(240, 56, 64, 1) 499%);
 
     ::selection {
         background-color: var(--primary-color); /* Changes the highlight background */
