@@ -14,7 +14,7 @@ import Timer from './components/Timer/Timer';
 import Button from './components/Button/Button';
 
 // Controller
-import { GameActionType, gameReducer, initialGameState, updateDocumentTitle } from './App.controller';
+import { GameActionType, gameReducer, initialGameState, updateDocumentTitle, updateStats } from './App.controller';
 
 // Custom styles
 import './reset.css';
@@ -32,7 +32,7 @@ const App = (): ReactElement => {
     const [stats, setStats] = useState<Stats>(initialStats);
 
     // App state
-    const [availableQuotes, setAvailableQuotes] = useState<Quote[]>([]);
+    const [availableQuotes, setAvailableQuotes] = useState<Quote[]>(selectRandomInspirationalQuotes());
     const [isWaitingOnUserToChooseQuote, setIsWaitingOnUserToChooseQuote] = useState<boolean>(false);
 
     const chooseQuote = useCallback((selectedQuote: Quote) => {
@@ -68,7 +68,7 @@ const App = (): ReactElement => {
 
     useEffect(() => {
         if (gameState.isVictory === true) {
-            setStats(getStatsFromLocalStorage());
+            setStats((prev) => updateStats(prev, gameState));
             updateDocumentTitle('Finished!');
         } else {
             updateDocumentTitle('Type Practice');
@@ -76,18 +76,26 @@ const App = (): ReactElement => {
     }, [gameState.isVictory]);
 
     useEffect(() => {
+        if (stats) {
+            localStorage.setItem('stats', JSON.stringify(stats));
+        }
+    }, [stats]);
+
+    useEffect(() => {
         const hasUserCompletedText: boolean =
-            gameState.typedText.replace(/\n/g, ' ') === gameState.targetText && gameState.targetText !== '';
+            gameState.typedText.replace(/\n/g, ' ') === gameState.targetText &&
+            gameState.targetText !== '' &&
+            gameState.isVictory !== true;
         const hasUserDeletedCharAfterCompletingText: boolean =
             gameState.typedText.length < gameState.targetText.length && gameState.isVictory === true;
 
         if (hasUserCompletedText) {
-            gameDispatch({ type: GameActionType.Finish, stats: stats });
+            gameDispatch({ type: GameActionType.Finish, finishTime: new Date() });
         } else if (hasUserDeletedCharAfterCompletingText) {
             // This is a fallback for restarting game upon deleting a character after completing a quote if the user device does not have the Backspace key.
             gameDispatch({ type: GameActionType.Restart });
         }
-    }, [gameState.typedText, gameState.targetText, gameState.isVictory, stats]);
+    }, [gameState.typedText, gameState.targetText, gameState.isVictory]);
 
     useEffect(() => {
         if (gameState.targetText) {
