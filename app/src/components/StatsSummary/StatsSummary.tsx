@@ -22,7 +22,9 @@ const StatsSummary = ({ stats }: Props): ReactElement => {
                 </div>
                 <div>
                     <span>High (today): </span>
-                    <span>{stats.today.quoteRecords.sort((a, b) => b.wpm - a.wpm)[0]?.wpm.toFixed(2) || 0}wpm</span>
+                    <span>
+                        {stats.today.quoteRecords.sort((a, b) => b.wpm - a.wpm)[0]?.wpm.toFixed(2) || '0.00'}wpm
+                    </span>
                 </div>
             </div>
             <span className="divider" />
@@ -42,7 +44,7 @@ const StatsSummary = ({ stats }: Props): ReactElement => {
                     <span>
                         {Object.values(stats?.history || {})
                             ?.sort((a, b) => b.wpm - a.wpm)?.[0]
-                            ?.wpm.toFixed(2) || 0}
+                            ?.wpm.toFixed(2) || '0.00'}
                         wpm
                     </span>
                 </div>
