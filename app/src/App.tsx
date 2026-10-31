@@ -41,6 +41,10 @@ const App = (): ReactElement => {
             quoteId: selectedQuote.id,
             targetText: selectedQuote.text.replace(/[’]/g, "'"),
         });
+
+        window.scrollTo(0, 0);
+
+        inputRef?.current?.focus();
     }, []);
 
     /** Checks for delete after completing quote, will restart game if so. */
@@ -88,10 +92,6 @@ const App = (): ReactElement => {
     useEffect(() => {
         if (gameState.targetText) {
             setIsWaitingOnUserToChooseQuote(false);
-
-            window.scrollTo(0, 0);
-
-            inputRef?.current?.focus();
         }
     }, [gameState.targetText]);
 
