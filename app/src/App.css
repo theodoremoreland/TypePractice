@@ -51,7 +51,7 @@
 html {
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle, rgb(9, 9, 9) 90%, rgba(240, 56, 64, 1) 193%);
+    background: radial-gradient(circle, rgb(9, 9, 9) 72%, rgba(240, 56, 64, 1) 499%);
 
     ::selection {
         background-color: var(--primary-color); /* Changes the highlight background */
@@ -122,12 +122,33 @@ body,
     text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.096);
     transform: skewY(-5deg);
     animation: fadeIn 1.5s forwards linear;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
 .gameStatus {
-    font: var(--header-small);
-    color: var(--quinary-color);
-    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.116);
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-family: body, system-ui;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    background-color: rgba(0, 0, 0, 0.442);
+    padding-top: 15vh;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.664);
+    animation: gameOver 3s forwards linear;
 }
 
 .panel {
@@ -209,6 +230,26 @@ body,
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes gameOver {
+    0% {
+        opacity: 0;
+        padding-top: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        padding-top: 15vh;
     }
 }
 
