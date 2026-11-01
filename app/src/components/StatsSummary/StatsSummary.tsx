@@ -2,8 +2,8 @@
 import { ReactElement } from 'react';
 
 // Custom
-import { Stats } from '../../utils/getStatsFromLocalStorage';
-import calculateWordsPerMinute from '../../utils/calculateWordsPerMinute';
+import { Stats } from '../../helpers/getStatsFromLocalStorage';
+import calculateWordsPerMinute from '../../helpers/calculateWordsPerMinute';
 
 // Styles
 import './StatsSummary.css';

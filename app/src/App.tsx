@@ -4,8 +4,10 @@ import React, { useState, useEffect, useRef, ReactElement, useReducer, useCallba
 // Custom
 import { Quote } from './data/inspirational-quotes';
 import selectRandomInspirationalQuotes from './modules/selectRandomInspirationalQuotes';
-import getStatsFromLocalStorage, { Stats } from './utils/getStatsFromLocalStorage';
 import StatsSummary from './components/StatsSummary/StatsSummary';
+import updateDocumentTitle from './utils/updateDocumentTitle';
+import getStatsFromLocalStorage, { Stats } from './helpers/getStatsFromLocalStorage';
+import updateStats from './helpers/updateStats';
 
 // Custom components
 import Card from './components/Card/Card';
@@ -14,7 +16,7 @@ import Timer from './components/Timer/Timer';
 import Button from './components/Button/Button';
 
 // Controller
-import { GameActionType, gameReducer, initialGameState, updateDocumentTitle, updateStats } from './App.controller';
+import { GameActionType, gameReducer, initialGameState } from './reducers/gameReducer';
 
 // Custom styles
 import './reset.css';
