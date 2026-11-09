@@ -49,3 +49,5 @@ Practice your typing speed while reading words of wisdom.
 <img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/9.png" width="250">
 
 <img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/10.png" width="250">
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/type-practice/11.png" width="250">
