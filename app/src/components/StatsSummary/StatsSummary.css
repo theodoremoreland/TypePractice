@@ -7,7 +7,7 @@
     gap: 0.5rem;
     height: 100%;
     color: var(--quinary-color);
-    font-family: body;
+    font-family: body, sans-serif;
 
     .recent {
         padding: 0.5rem;
